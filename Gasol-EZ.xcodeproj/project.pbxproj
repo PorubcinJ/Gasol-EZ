@@ -15,6 +15,7 @@
 		FE1CF97E1F0D2E87004EB3EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE1CF97C1F0D2E87004EB3EA /* LaunchScreen.storyboard */; };
 		FE1CF98E1F0D4DCD004EB3EA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1CF98D1F0D4DCD004EB3EA /* MainViewController.swift */; };
 		FE1CF9921F0D52D5004EB3EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE1CF9911F0D52D5004EB3EA /* GoogleService-Info.plist */; };
+		FE1CF9941F0D6713004EB3EA /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1CF9931F0D6713004EB3EA /* NavigationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FE1CF97F1F0D2E87004EB3EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE1CF98D1F0D4DCD004EB3EA /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FE1CF9911F0D52D5004EB3EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FE1CF9931F0D6713004EB3EA /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			children = (
 				FE1CF9751F0D2E87004EB3EA /* ViewController.swift */,
 				FE1CF98D1F0D4DCD004EB3EA /* MainViewController.swift */,
+				FE1CF9931F0D6713004EB3EA /* NavigationViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE1CF9941F0D6713004EB3EA /* NavigationViewController.swift in Sources */,
 				FE1CF98E1F0D4DCD004EB3EA /* MainViewController.swift in Sources */,
 				FE1CF9761F0D2E87004EB3EA /* ViewController.swift in Sources */,
 				FE1CF9741F0D2E87004EB3EA /* AppDelegate.swift in Sources */,
