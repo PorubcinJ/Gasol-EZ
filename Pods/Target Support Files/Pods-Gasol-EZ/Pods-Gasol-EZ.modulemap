@@ -1,0 +1,6 @@
+framework module Pods_Gasol_EZ {
+  umbrella header "Pods-Gasol-EZ-umbrella.h"
+
+  export *
+  module * { export * }
+}
