@@ -23,6 +23,9 @@ class MapViewController: UIViewController {
     var placesClient: GMSPlacesClient!
     var zoomLevel: Float = 15.0
 
+    var gasStation: GasStation!
+    var gasStations: [GasStation] = []
+
     var didFindLocation: Bool = false
 
     override func viewDidLoad() {
@@ -81,7 +84,14 @@ extension MapViewController: CLLocationManagerDelegate {
             case .success:
                 if let value = response.result.value {
                     let json = JSON(value)
-                    print(json)
+                    let gasStationData = json["results"]
+
+                    //print(gasStationData)
+
+                    for i in 0..<gasStationData.count {
+                        self.gasStations.append(GasStation(json: gasStationData[i]))
+                    }
+                    print(self.gasStations)
 
                 }
             case .failure(let error):
