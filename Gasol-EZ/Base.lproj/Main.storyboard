@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVo-fD-ZbO">
-                                <rect key="frame" x="0.0" y="148" width="375" height="371"/>
+                                <rect key="frame" x="0.0" y="226" width="375" height="371"/>
                                 <color key="backgroundColor" red="1" green="0.79606428951520936" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="118"/>
                                 <state key="normal" image="gas"/>
@@ -31,11 +31,11 @@
                                     <segue destination="cxQ-cb-YzH" kind="show" id="8qL-NQ-zW3"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BqB-g9-OwK">
-                                <rect key="frame" x="59" y="527" width="256" height="31"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="BqB-g9-OwK">
+                                <rect key="frame" x="59" y="188" width="256" height="31"/>
                                 <color key="backgroundColor" red="1" green="0.79606428949999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="pc4-ly-f9w"/>
+                                    <constraint firstAttribute="height" constant="30" id="0kI-DD-0kw"/>
                                 </constraints>
                                 <segments>
                                     <segment title="0.5 miles"/>
@@ -45,30 +45,45 @@
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Gassy!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mff-On-F7p">
-                                <rect key="frame" x="0.0" y="89" width="375" height="51"/>
+                                <rect key="frame" x="0.0" y="109" width="375" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="1cV-wa-5l7"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the picture above to start!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jn7-ji-BoT">
+                                <rect key="frame" x="0.0" y="546" width="375" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="mNh-r4-O4h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.79606428949999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="rVo-fD-ZbO" firstAttribute="centerX" secondItem="BqB-g9-OwK" secondAttribute="centerX" id="17t-07-Yxh"/>
-                            <constraint firstItem="Mff-On-F7p" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="8oA-Sv-Hy7"/>
-                            <constraint firstItem="Mff-On-F7p" firstAttribute="leading" secondItem="rVo-fD-ZbO" secondAttribute="leading" id="IDa-gq-mVl"/>
-                            <constraint firstItem="rVo-fD-ZbO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="K10-ks-Acv"/>
-                            <constraint firstItem="Mff-On-F7p" firstAttribute="trailing" secondItem="rVo-fD-ZbO" secondAttribute="trailing" id="MOg-SG-KJB"/>
-                            <constraint firstItem="BqB-g9-OwK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="43" id="ZvX-1l-a6b"/>
-                            <constraint firstAttribute="trailing" secondItem="Mff-On-F7p" secondAttribute="trailing" id="fMd-WD-Vxa"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="BqB-g9-OwK" secondAttribute="bottom" constant="110" id="mwx-AP-9m4"/>
-                            <constraint firstItem="rVo-fD-ZbO" firstAttribute="top" secondItem="Mff-On-F7p" secondAttribute="bottom" constant="8" symbolic="YES" id="sWm-0W-bFc"/>
-                            <constraint firstItem="Mff-On-F7p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xUP-lI-cVr"/>
-                            <constraint firstItem="BqB-g9-OwK" firstAttribute="top" secondItem="rVo-fD-ZbO" secondAttribute="bottom" constant="8" symbolic="YES" id="yIS-s4-Zx1"/>
+                            <constraint firstItem="Mff-On-F7p" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="45" id="4Su-8b-xna"/>
+                            <constraint firstItem="rVo-fD-ZbO" firstAttribute="leading" secondItem="jn7-ji-BoT" secondAttribute="leading" id="8tj-ds-zKd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rVo-fD-ZbO" secondAttribute="bottom" constant="70" id="AhI-Na-zqO"/>
+                            <constraint firstItem="Mff-On-F7p" firstAttribute="leading" secondItem="rVo-fD-ZbO" secondAttribute="leading" id="CRv-CZ-9UO"/>
+                            <constraint firstAttribute="trailing" secondItem="Mff-On-F7p" secondAttribute="trailing" id="Hev-FQ-Ra2"/>
+                            <constraint firstItem="rVo-fD-ZbO" firstAttribute="trailing" secondItem="jn7-ji-BoT" secondAttribute="trailing" id="HjE-tX-ROl"/>
+                            <constraint firstItem="Mff-On-F7p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Qkz-Um-CKW"/>
+                            <constraint firstItem="Mff-On-F7p" firstAttribute="centerX" secondItem="BqB-g9-OwK" secondAttribute="centerX" id="Vma-NK-gl8"/>
+                            <constraint firstItem="rVo-fD-ZbO" firstAttribute="top" secondItem="BqB-g9-OwK" secondAttribute="bottom" constant="8" symbolic="YES" id="cGI-Cq-lnz"/>
+                            <constraint firstItem="BqB-g9-OwK" firstAttribute="top" secondItem="Mff-On-F7p" secondAttribute="bottom" constant="28" id="dl6-w3-Dfj"/>
+                            <constraint firstItem="BqB-g9-OwK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="43" id="hQk-oS-zKC"/>
+                            <constraint firstItem="rVo-fD-ZbO" firstAttribute="bottom" secondItem="jn7-ji-BoT" secondAttribute="bottom" id="s11-Le-le7"/>
+                            <constraint firstItem="Mff-On-F7p" firstAttribute="trailing" secondItem="rVo-fD-ZbO" secondAttribute="trailing" id="x0L-uI-0j3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Gasol-EZ" id="scB-Wg-9Id"/>
                     <connections>
                         <outlet property="gasButton" destination="rVo-fD-ZbO" id="4np-ux-Q0B"/>
                         <outlet property="segmentedControl" destination="BqB-g9-OwK" id="m7U-y2-Cg6"/>
+                        <outlet property="tutorialLabel" destination="jn7-ji-BoT" id="Pxj-wN-9hN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -98,7 +113,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OZ9-2l-irM" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lim-oa-cb9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lim-oa-cb9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

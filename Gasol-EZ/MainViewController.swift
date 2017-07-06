@@ -10,10 +10,16 @@ import Foundation
 import UIKit
 
 class MainViewController: UIViewController {
+	
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
+		
+		fadeIn()
 	}
+	
+	@IBOutlet weak var tutorialLabel: UILabel!
 	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
@@ -23,4 +29,12 @@ class MainViewController: UIViewController {
 	@IBOutlet weak var gasButton: UIButton!
 	
 	@IBOutlet weak var segmentedControl: UISegmentedControl!
+	
+	func fadeIn() {
+		tutorialLabel.alpha = 0
+		
+		UIView.animate(withDuration: 10) {
+			self.tutorialLabel.alpha = 0.25
+		}
+	}
 }
