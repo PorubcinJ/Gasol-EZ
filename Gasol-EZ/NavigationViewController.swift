@@ -14,5 +14,21 @@ import GoogleMapsCore
 import GooglePlacePicker
 
 class NavigationViewController: UIViewController {
-	origin =
+	
+	var timer = Timer()
+	
+	
+	
+	@IBOutlet weak var progressView: UIProgressView!
+	@IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+	
+	override func viewDidLoad() {
+		super .viewDidLoad()
+		timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(NavigationViewController.go), userInfo: nil, repeats: true)
+	}
+	
+	func go() {
+		progressView.progress += 0.00001
+	}
+	
 }
