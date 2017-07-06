@@ -33,8 +33,8 @@ class MainViewController: UIViewController {
 	func fadeIn() {
 		tutorialLabel.alpha = 0
 		
-		UIView.animate(withDuration: 10) {
-			self.tutorialLabel.alpha = 0.25
+		UIView.animate(withDuration: 20) {
+			self.tutorialLabel.alpha = 1
 		}
 	}
 }

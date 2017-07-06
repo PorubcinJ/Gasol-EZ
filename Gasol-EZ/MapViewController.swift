@@ -74,8 +74,6 @@ extension MapViewController: CLLocationManagerDelegate {
         print("\n\n ** Location: \((currentLocation?.coordinate.latitude)!), \((currentLocation?.coordinate.longitude)!) \n\n")
 
         let locationCoordinates: String = "\(String(describing: (currentLocation?.coordinate.latitude)!)),\(String(describing: (currentLocation?.coordinate.longitude)!))"
-		
-		let distanceChosen = 1
 
         let apiToContact = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(locationCoordinates)&radius=1609.34&type=gas_station&key=\(Constants.Alamofire.gmPlacesApiKey)"
 
