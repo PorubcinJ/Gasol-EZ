@@ -38,8 +38,9 @@
                                     <constraint firstAttribute="height" constant="30" id="pc4-ly-f9w"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="Closest"/>
-                                    <segment title="Cheapest"/>
+                                    <segment title="0.5 miles"/>
+                                    <segment title="1 mile"/>
+                                    <segment title="5 mile"/>
                                 </segments>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
