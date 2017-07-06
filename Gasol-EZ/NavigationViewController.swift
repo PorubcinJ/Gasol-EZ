@@ -24,11 +24,16 @@ class NavigationViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super .viewDidLoad()
-		timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(NavigationViewController.go), userInfo: nil, repeats: true)
+		timer = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(NavigationViewController.go), userInfo: nil, repeats: true)
 	}
 	
 	func go() {
-		progressView.progress += 0.00001
+		if progressView.progress < 0.5 {
+			progressView.progress += 0.000005
+		} else {
+			progressView.progress += 0.000001
+		}
+		
 	}
 	
 }
