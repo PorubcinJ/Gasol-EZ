@@ -70,7 +70,9 @@ extension MapViewController: CLLocationManagerDelegate {
 
         print("\n\n ** Location: \((currentLocation?.coordinate.latitude)!), \((currentLocation?.coordinate.longitude)!) \n\n")
 
-        let apiToContact = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=\(Constants.Alamofire.gmPlacesApiKey)"
+        let locationCoordinates: String = "\(String(describing: (currentLocation?.coordinate.latitude)!)),\(String(describing: (currentLocation?.coordinate.longitude)!))"
+
+        let apiToContact = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(locationCoordinates)&radius=5000&type=gas_station&key=\(Constants.Alamofire.gmPlacesApiKey)"
 
         Alamofire.request(apiToContact).validate().responseJSON() { response in
             switch response.result {
