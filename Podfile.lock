@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.5.0)
   - Firebase/Auth (4.0.3):
     - Firebase/Core
     - FirebaseAuth (= 4.0.0)
@@ -52,8 +53,10 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.10)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.5)
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -62,8 +65,10 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
+  - SwiftyJSON (~> 3.1)
 
 SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   Firebase: 9e33fdfbca37cab635c693883caa90a4475b842b
   FirebaseAnalytics: ad41720e3e67fc63fbe3d2948d3e26932a8de311
   FirebaseAuth: ebb6abcbabae00fc47446d690c19ce68d8484fde
@@ -77,7 +82,8 @@ SPEC CHECKSUMS:
   GooglePlaces: 4a7b22debfa1af65017b82943431822607e45201
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 45312f79e48b6699ae7fa8f8da4392ed283319eb
+PODFILE CHECKSUM: 83e0cd1168cc9d7041882628272deaa56b547f36
 
 COCOAPODS: 1.2.1

@@ -14,5 +14,5 @@ import GoogleMapsCore
 import GooglePlacePicker
 
 class NavigationViewController: UIViewController {
-	
+	origin =
 }

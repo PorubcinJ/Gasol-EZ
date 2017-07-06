@@ -14,5 +14,7 @@ target 'Gasol-EZ' do
   pod ‘GooglePlaces’
   pod ‘GooglePlacePicker’
   pod ‘GoogleMaps’
+  pod 'Alamofire', '~> 4.5'
+  pod 'SwiftyJSON', '~> 3.1'
 
 end
