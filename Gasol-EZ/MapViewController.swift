@@ -81,7 +81,7 @@ extension MapViewController: CLLocationManagerDelegate {
 
         let locationCoordinates: String = "\(String(describing: (currentLocation?.coordinate.latitude)!)),\(String(describing: (currentLocation?.coordinate.longitude)!))"
 
-        let apiToContact = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(locationCoordinates)&radius=\(Int(radiusMilage)).34&type=gas_station&key=\(Constants.Alamofire.gmPlacesApiKey)"
+        let apiToContact = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(locationCoordinates)&rankby=distance&type=gas_station&key=\(Constants.Alamofire.gmPlacesApiKey)"
 
         Alamofire.request(apiToContact).validate().responseJSON() { response in
             switch response.result {
@@ -90,7 +90,7 @@ extension MapViewController: CLLocationManagerDelegate {
                     let json = JSON(value)
                     let gasStationData = json["results"]
 
-                    //print(gasStationData)
+                    print(gasStationData)
 
                     for i in 0..<gasStationData.count {
                         self.gasStations.append(GasStation(json: gasStationData[i]))
