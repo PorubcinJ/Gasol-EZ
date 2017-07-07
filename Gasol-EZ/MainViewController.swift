@@ -73,17 +73,17 @@ class MainViewController: UIViewController {
 	}
 
     func openMapForPlace() {
-        print(gasStations)
 
         let latitude: CLLocationDegrees = CLLocationDegrees(gasStations[0].locationLatitude)
         let longitude: CLLocationDegrees = CLLocationDegrees(gasStations[0].locationLongitude)
 
-        let regionDistance:CLLocationDistance = 10000
+        let regionDistance:CLLocationDistance = 70000
+
         let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
         let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
         let options = [
             MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
-            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span),
         ]
         let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
         let mapItem = MKMapItem(placemark: placemark)
