@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,29 +22,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the picture above to start!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jn7-ji-BoT">
-                                <rect key="frame" x="30" y="609" width="315.5" height="51"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the picture above to start!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jn7-ji-BoT">
+                                <rect key="frame" x="0.0" y="616" width="375" height="51"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="51" id="YI5-aa-Ack"/>
+                                    <constraint firstAttribute="height" constant="51" id="Okl-ov-fMO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVo-fD-ZbO">
-                                <rect key="frame" x="59.5" y="205.5" width="256" height="256"/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVo-fD-ZbO">
+                                <rect key="frame" x="60" y="206" width="256" height="256"/>
+                                <color key="backgroundColor" red="0.45431686078134337" green="0.83826053211795271" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rVo-fD-ZbO" secondAttribute="height" multiplier="1:1" id="bMr-pG-44g"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="118"/>
                                 <state key="normal" image="gas"/>
                                 <connections>
                                     <action selector="gasButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I5v-W1-Xs6"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to get Gas!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mff-On-F7p">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to get Gas!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mff-On-F7p">
                                 <rect key="frame" x="0.0" y="28" width="375" height="51"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="51" id="Ki7-Z7-A5H"/>
+                                    <constraint firstAttribute="height" constant="51" id="ifh-J2-0zM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -52,13 +56,15 @@
                         </subviews>
                         <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Mff-On-F7p" secondAttribute="trailing" id="NIE-P3-DVN"/>
-                            <constraint firstItem="Mff-On-F7p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OFg-fH-NaF"/>
-                            <constraint firstItem="Mff-On-F7p" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="fdv-68-UWQ"/>
-                            <constraint firstItem="rVo-fD-ZbO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kh2-Q4-wbR"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jn7-ji-BoT" secondAttribute="bottom" constant="7" id="lSf-f0-TxU"/>
-                            <constraint firstItem="rVo-fD-ZbO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nWU-q1-VZJ"/>
-                            <constraint firstItem="jn7-ji-BoT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="svl-VF-L5Q"/>
+                            <constraint firstItem="jn7-ji-BoT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1rp-af-cj4"/>
+                            <constraint firstItem="jn7-ji-BoT" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Djv-xi-zbM"/>
+                            <constraint firstAttribute="trailing" secondItem="jn7-ji-BoT" secondAttribute="trailing" id="Dm7-Dk-gPy"/>
+                            <constraint firstItem="Mff-On-F7p" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="IpT-WL-4XE"/>
+                            <constraint firstItem="rVo-fD-ZbO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PSS-99-yvw"/>
+                            <constraint firstItem="Mff-On-F7p" firstAttribute="centerX" secondItem="rVo-fD-ZbO" secondAttribute="centerX" id="S4w-ks-yDd"/>
+                            <constraint firstItem="Mff-On-F7p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VTh-sV-HKU"/>
+                            <constraint firstAttribute="trailing" secondItem="Mff-On-F7p" secondAttribute="trailing" id="WQN-2Z-7GT"/>
+                            <constraint firstItem="rVo-fD-ZbO" firstAttribute="centerX" secondItem="jn7-ji-BoT" secondAttribute="centerX" id="YR0-jA-wi7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Gasol-EZ" id="scB-Wg-9Id"/>
@@ -70,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1438" y="761"/>
+            <point key="canvasLocation" x="1437.5999999999999" y="760.56971514242889"/>
         </scene>
     </scenes>
     <resources>
