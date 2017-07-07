@@ -6,12 +6,8 @@
 //  Copyright © 2017 Make School. All rights reserved.
 //
 
-import Foundation
 import UIKit
-import GoogleMaps
 import GooglePlaces
-import GoogleMapsCore
-import GooglePlacePicker
 import Alamofire
 import SwiftyJSON
 import MapKit
@@ -91,7 +87,7 @@ class MainViewController: UIViewController {
         ]
         let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
         let mapItem = MKMapItem(placemark: placemark)
-        mapItem.name = "\(gasStations[0].name)"
+        mapItem.name = "\((gasStations[0].name)!)"
         mapItem.openInMaps(launchOptions: options)
     }
 
@@ -99,7 +95,7 @@ class MainViewController: UIViewController {
         print("Button pressed")
 
         let locationCoordinates: String = "\(locationLatitude!),\(locationLongidude!)"
-        let apiToContact = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(locationCoordinates)&rankby=distance&type=gas_station&key=\(Constants.Alamofire.gmPlacesApiKey)"
+        let apiToContact = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(locationCoordinates)&rankby=distance&keyword=gas_station&opennow=true&key=\(Constants.Alamofire.gmPlacesApiKey)"
 
         Alamofire.request(apiToContact).validate().responseJSON() { response in
             switch response.result {
