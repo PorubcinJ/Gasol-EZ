@@ -17,5 +17,6 @@ target 'Gasol-EZ' do
   pod 'Alamofire', '~> 4.5'
   pod 'SwiftyJSON', '~> 3.1'
   pod 'JLocationKit', '~> 1.0.0'
+  pod 'Google-Mobile-Ads-SDK'
 
 end
