@@ -122,22 +122,6 @@ class MainViewController: UIViewController {
             }
         }
     }
-
-    @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
-
-            print("segmented control value changed to 0: radius = 0.5")
-            radius = 0.5
-
-        } else if sender.selectedSegmentIndex == 1 {
-            print("segmented control value changed to 1: radius = 1")
-            radius = 1.0
-
-        } else {
-            print("segmented control value changed to 2: radius = 5")
-            radius = 5.0
-        }
-    }
 }
 
 
