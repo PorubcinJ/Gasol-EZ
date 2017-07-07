@@ -2,7 +2,7 @@
 //  MainViewController.swift
 //  Gasol-EZ
 //
-//  Created by Jozef Porubcin on 7/5/17.
+//  Created by Jozef Porubcin and Matt Ziminski on 7/5/17.
 //  Copyright © 2017 Make School. All rights reserved.
 //
 
