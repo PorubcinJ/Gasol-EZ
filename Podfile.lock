@@ -53,6 +53,7 @@ PODS:
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
   - GTMSessionFetcher/Core (1.1.10)
+  - JLocationKit (1.0.1)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -65,6 +66,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
+  - JLocationKit (~> 1.0.0)
   - SwiftyJSON (~> 3.1)
 
 SPEC CHECKSUMS:
@@ -82,8 +84,9 @@ SPEC CHECKSUMS:
   GooglePlaces: 4a7b22debfa1af65017b82943431822607e45201
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
+  JLocationKit: a8ce7dfe7bd282573077a8cf67d29de7e2a7ca97
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 83e0cd1168cc9d7041882628272deaa56b547f36
+PODFILE CHECKSUM: a259f1ca032cc8fc1b23a166865b9b22647751df
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.2.0

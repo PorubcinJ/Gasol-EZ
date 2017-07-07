@@ -28,7 +28,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="118"/>
                                 <state key="normal" image="gas"/>
                                 <connections>
-                                    <segue destination="cxQ-cb-YzH" kind="show" identifier="toMapNavigationViewController" id="8qL-NQ-zW3"/>
+                                    <action selector="gasButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I5v-W1-Xs6"/>
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="BqB-g9-OwK">
@@ -96,30 +96,12 @@
             </objects>
             <point key="canvasLocation" x="1792.8" y="777.66116941529242"/>
         </scene>
-        <!--Navigation-->
-        <scene sceneID="qFb-U9-r6P">
-            <objects>
-                <viewController title="Navigation" id="cxQ-cb-YzH" customClass="MapViewController" customModule="Gasol_EZ" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ODF-Zc-ujC"/>
-                        <viewControllerLayoutGuide type="bottom" id="1Lu-aY-5C7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gBv-zn-9vB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vAJ-Of-HoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2656.8000000000002" y="777.66116941529242"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="C2s-JK-RRn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OZ9-2l-irM" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lim-oa-cb9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lim-oa-cb9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
