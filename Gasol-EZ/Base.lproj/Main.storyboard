@@ -28,7 +28,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="118"/>
                                 <state key="normal" image="gas"/>
                                 <connections>
-                                    <segue destination="cxQ-cb-YzH" kind="show" id="8qL-NQ-zW3"/>
+                                    <segue destination="cxQ-cb-YzH" kind="show" identifier="toMapNavigationViewController" id="8qL-NQ-zW3"/>
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="BqB-g9-OwK">
@@ -43,6 +43,9 @@
                                     <segment title="5 mile"/>
                                 </segments>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentedControlValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="WR5-9G-gVY"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to get Gas!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mff-On-F7p">
                                 <rect key="frame" x="0.0" y="97" width="375" height="51"/>
@@ -116,7 +119,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OZ9-2l-irM" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lim-oa-cb9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lim-oa-cb9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

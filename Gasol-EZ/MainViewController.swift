@@ -10,7 +10,13 @@ import Foundation
 import UIKit
 
 class MainViewController: UIViewController {
-	
+
+    @IBOutlet weak var tutorialLabel: UILabel!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var gasButton: UIButton!
+
+    var radius: Double! = 1
+
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -18,17 +24,21 @@ class MainViewController: UIViewController {
 		
 		fadeIn()
 	}
-	
-	@IBOutlet weak var tutorialLabel: UILabel!
+
 	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
 	}
-	
-	@IBOutlet weak var gasButton: UIButton!
-	
-	@IBOutlet weak var segmentedControl: UISegmentedControl!
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.Segue.toMapNavigationViewController {
+            print("segue to Map Navigation View Controller")
+
+            let mapViewController = segue.destination as! MapViewController
+            mapViewController.radiusMilage = radius
+        }
+    }
 	
 	func fadeIn() {
 		tutorialLabel.alpha = 0
@@ -37,4 +47,19 @@ class MainViewController: UIViewController {
 			self.tutorialLabel.alpha = 1
 		}
 	}
+    @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+
+            print("segmented control value changed to 0: radius = 0.5")
+            radius = 0.5
+
+        } else if sender.selectedSegmentIndex == 1 {
+            print("segmented control value changed to 1: radius = 1")
+            radius = 1.0
+
+        } else {
+            print("segmented control value changed to 2: radius = 5")
+            radius = 5.0
+        }
+    }
 }

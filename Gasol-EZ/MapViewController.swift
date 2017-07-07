@@ -26,6 +26,13 @@ class MapViewController: UIViewController {
     var gasStation: GasStation!
     var gasStations: [GasStation] = []
 
+    var radiusMilage: Double! {
+        didSet {
+            radiusMilage = radiusMilage * 1000 * 1.609344
+            print(radiusMilage)
+        }
+    }
+
     var didFindLocation: Bool = false
 
     override func viewDidLoad() {
@@ -40,7 +47,6 @@ class MapViewController: UIViewController {
         
         placesClient = GMSPlacesClient.shared()
     }
-
 }
 
 extension MapViewController: CLLocationManagerDelegate {
@@ -75,7 +81,7 @@ extension MapViewController: CLLocationManagerDelegate {
 
         let locationCoordinates: String = "\(String(describing: (currentLocation?.coordinate.latitude)!)),\(String(describing: (currentLocation?.coordinate.longitude)!))"
 
-        let apiToContact = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(locationCoordinates)&radius=1609.34&type=gas_station&key=\(Constants.Alamofire.gmPlacesApiKey)"
+        let apiToContact = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(locationCoordinates)&radius=\(Int(radiusMilage)).34&type=gas_station&key=\(Constants.Alamofire.gmPlacesApiKey)"
 
         Alamofire.request(apiToContact).validate().responseJSON() { response in
             switch response.result {
