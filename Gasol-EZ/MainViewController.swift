@@ -13,7 +13,13 @@ import SwiftyJSON
 import MapKit
 import JLocationKit
 
-class MainViewController: UIViewController {
+final class MainViewController: UICollectionViewController{
+	
+	var buttons = [Button](){
+		didSet {
+			collectionView?.reloadData()
+		}
+	}
 
     let location: LocationManager = LocationManager()
     var locationLatitude: String!
@@ -28,33 +34,23 @@ class MainViewController: UIViewController {
             print(radiusMilage)
         }
     }
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if restorationIdentifier == "addButton" {
+			print("+ button tapped")
+		}
+	}
 
     var didFindLocation: Bool = false
-
-    @IBOutlet weak var tutorialLabel: UILabel!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var gasButton: UIButton!
+	
+    @IBOutlet weak var firstButton: UIButton!
+	@IBOutlet weak var collectionViewCell: UICollectionViewCell!
 
     var radius: Double! = 1
 
     override func viewDidLoad() {
-
-        location.requestAccess = .requestWhenInUseAuthorization //default is .requestAlwaysAuthorization
-
-        location.getLocation(detectStyle: .Once, completion: { (loc) in
-            print(loc.currentLocation.coordinate.latitude.description)
-            print(loc.currentLocation.coordinate.longitude.description)
-
-            self.locationLatitude = loc.currentLocation.coordinate.latitude.description
-            self.locationLongidude = loc.currentLocation.coordinate.longitude.description
-            print("Something")
-        }, authorizationChange: { (status) in
-            //optional
-            print(status)
-        })
-        print("Finished")
-        
-        fadeIn()
+		super.viewDidLoad()
+		buttons = CoreDataHelper.retrieveButtons()
     }
 
 	
@@ -63,17 +59,21 @@ class MainViewController: UIViewController {
 		// Dispose of any resources that can be recreated.
 	}
 
-	
-	func fadeIn() {
-		tutorialLabel.alpha = 0
-		
-		UIView.animate(withDuration: 20) {
-			self.tutorialLabel.alpha = 1
-		}
-	}
-
     func openMapForPlace() {
-
+		location.requestAccess = .requestWhenInUseAuthorization //default is .requestAlwaysAuthorization
+		
+		location.getLocation(detectStyle: .Once, completion: { (loc) in
+			print(loc.currentLocation.coordinate.latitude.description)
+			print(loc.currentLocation.coordinate.longitude.description)
+			
+			self.locationLatitude = loc.currentLocation.coordinate.latitude.description
+			self.locationLongidude = loc.currentLocation.coordinate.longitude.description
+		}, authorizationChange: { (status) in
+			//optional
+			print(status)
+		})
+		print("Finished")
+		
         let latitude: CLLocationDegrees = CLLocationDegrees(gasStations[0].locationLatitude)
         let longitude: CLLocationDegrees = CLLocationDegrees(gasStations[0].locationLongitude)
 
@@ -91,11 +91,10 @@ class MainViewController: UIViewController {
         mapItem.openInMaps(launchOptions: options)
     }
 
-    @IBAction func gasButtonPressed(_ sender: UIButton) {
+    @IBAction func firstButtonPressed(_ sender: UIButton) {
         print("Button pressed")
-
         let locationCoordinates: String = "\(locationLatitude!),\(locationLongidude!)"
-        let apiToContact = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(locationCoordinates)&rankby=distance&keyword=gas_station&opennow=true&key=\(Constants.Alamofire.gmPlacesApiKey)"
+        let apiToContact = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(locationCoordinates)&rankby=distance&keyword=McDonald's&opennow=true&key=\(Constants.Alamofire.gmPlacesApiKey)"
 
         Alamofire.request(apiToContact).validate().responseJSON() { response in
             switch response.result {
@@ -117,7 +116,23 @@ class MainViewController: UIViewController {
                 print(error)
             }
         }
-    }
+	}
+	
+	override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return buttons.count
+	}
+	
+	override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ButtonCollectionViewCell", for: indexPath)
+		let item = indexPath.item
+		let button = buttons[buttons.count]
+//		cell.image.text = button.url
+		return cell
+	}
+	
+	@IBAction func unwindToMainViewController(_ segue: UIStoryboardSegue) {
+		self.buttons = CoreDataHelper.retrieveButtons()
+	}
 }
 
 

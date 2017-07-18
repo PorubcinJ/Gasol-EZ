@@ -16,6 +16,10 @@
 		FE1CF97B1F0D2E87004EB3EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE1CF97A1F0D2E87004EB3EA /* Assets.xcassets */; };
 		FE1CF97E1F0D2E87004EB3EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE1CF97C1F0D2E87004EB3EA /* LaunchScreen.storyboard */; };
 		FE1CF98E1F0D4DCD004EB3EA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1CF98D1F0D4DCD004EB3EA /* MainViewController.swift */; };
+		FEDA225C1F1E6FE000B00586 /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDA225B1F1E6FE000B00586 /* ButtonCollectionViewCell.swift */; };
+		FEED2FEA1F17F8B100FB417A /* AddBubbleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEED2FE91F17F8B100FB417A /* AddBubbleViewController.swift */; };
+		FEED2FEF1F191DF200FB417A /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEED2FEE1F191DF200FB417A /* CoreDataHelper.swift */; };
+		FEED2FF21F19582200FB417A /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEED2FF01F19582200FB417A /* CoreData.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,12 +30,16 @@
 		89E7A00E806EB0FD37B5C554 /* Pods-Gasol-EZ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gasol-EZ.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gasol-EZ/Pods-Gasol-EZ.release.xcconfig"; sourceTree = "<group>"; };
 		F286D0AD79BE8F644A7165D9 /* Pods_Gasol_EZ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gasol_EZ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE1CF9701F0D2E87004EB3EA /* Gasol-EZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gasol-EZ.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE1CF9731F0D2E87004EB3EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FE1CF9731F0D2E87004EB3EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FE1CF9781F0D2E87004EB3EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE1CF97A1F0D2E87004EB3EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE1CF97D1F0D2E87004EB3EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE1CF97F1F0D2E87004EB3EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE1CF98D1F0D4DCD004EB3EA /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FEDA225B1F1E6FE000B00586 /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
+		FEED2FE91F17F8B100FB417A /* AddBubbleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBubbleViewController.swift; sourceTree = "<group>"; };
+		FEED2FEE1F191DF200FB417A /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		FEED2FF11F19582200FB417A /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +84,10 @@
 		FE1CF9721F0D2E87004EB3EA /* Gasol-EZ */ = {
 			isa = PBXGroup;
 			children = (
+				FEDA225A1F1E6FC700B00586 /* Views */,
+				FEED2FEB1F17FA4D00FB417A /* Helpers */,
 				FE1CF9731F0D2E87004EB3EA /* AppDelegate.swift */,
+				FEED2FF01F19582200FB417A /* CoreData.xcdatamodeld */,
 				FE1CF98C1F0D493C004EB3EA /* Supporting Files */,
 				FE1CF98B1F0D4929004EB3EA /* View Controllers */,
 				FE1CF98A1F0D4917004EB3EA /* Storyboards */,
@@ -105,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				FE1CF98D1F0D4DCD004EB3EA /* MainViewController.swift */,
+				FEED2FE91F17F8B100FB417A /* AddBubbleViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -119,6 +131,22 @@
 				68DE217D1F0EBAC700ACC53E /* GasStation.swift */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FEDA225A1F1E6FC700B00586 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FEDA225B1F1E6FE000B00586 /* ButtonCollectionViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FEED2FEB1F17FA4D00FB417A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FEED2FEE1F191DF200FB417A /* CoreDataHelper.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,10 +279,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEED2FEF1F191DF200FB417A /* CoreDataHelper.swift in Sources */,
 				68DE217E1F0EBAC700ACC53E /* GasStation.swift in Sources */,
 				68DE217C1F0E8C6700ACC53E /* Constants.swift in Sources */,
 				FE1CF98E1F0D4DCD004EB3EA /* MainViewController.swift in Sources */,
+				FEED2FEA1F17F8B100FB417A /* AddBubbleViewController.swift in Sources */,
 				FE1CF9741F0D2E87004EB3EA /* AppDelegate.swift in Sources */,
+				FEDA225C1F1E6FE000B00586 /* ButtonCollectionViewCell.swift in Sources */,
+				FEED2FF21F19582200FB417A /* CoreData.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +457,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FEED2FF01F19582200FB417A /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FEED2FF11F19582200FB417A /* CoreData.xcdatamodel */,
+			);
+			currentVersion = FEED2FF11F19582200FB417A /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FE1CF9681F0D2E87004EB3EA /* Project object */;
 }

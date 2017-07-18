@@ -1,85 +1,156 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SLT-lf-nxi">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Gasol-EZ-->
-        <scene sceneID="tne-QT-ifu">
+        <!--One Tap!-->
+        <scene sceneID="DsX-mZ-oad">
             <objects>
-                <viewController title="Gasol-EZ" id="BYZ-38-t0r" customClass="MainViewController" customModule="Gasol_EZ" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController restorationIdentifier="MainViewController" id="cdI-co-Yrd" customClass="MainViewController" customModule="Gasol_EZ" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Oz7-6f-xQH" customClass="List">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fBy-oC-6Eu">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="bubbleCell" id="pF8-jY-wqY" customClass="ButtonCollectionViewCell" customModule="Gasol_EZ" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Tp-ZI-uEH">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <state key="normal" image="mcdonalds"/>
+                                        </button>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="8Tp-ZI-uEH" firstAttribute="leading" secondItem="pF8-jY-wqY" secondAttribute="leading" id="9AH-vX-JfL"/>
+                                    <constraint firstItem="8Tp-ZI-uEH" firstAttribute="top" secondItem="pF8-jY-wqY" secondAttribute="top" id="I6G-S5-5cs"/>
+                                    <constraint firstAttribute="bottom" secondItem="8Tp-ZI-uEH" secondAttribute="bottom" id="XHJ-IB-brq"/>
+                                    <constraint firstAttribute="trailing" secondItem="8Tp-ZI-uEH" secondAttribute="trailing" id="sNn-UL-Ilm"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="image" destination="8Tp-ZI-uEH" id="DQy-rF-veb"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="cdI-co-Yrd" id="7Cl-gh-tmE"/>
+                            <outlet property="delegate" destination="cdI-co-Yrd" id="p88-E9-cu0"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="One Tap!" id="Tqi-Ju-YWo">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pgI-YN-UWS" userLabel="addButton">
+                            <connections>
+                                <segue destination="hxM-9b-MdE" kind="show" id="3bm-cp-Rc2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <value key="contentSizeForViewInPopover" type="size" width="375" height="667"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1vm-gI-FY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2013.5999999999999" y="1424.4377811094455"/>
+        </scene>
+        <!--Add Bubble View Controller-->
+        <scene sceneID="vrF-Ss-b8F">
+            <objects>
+                <viewController id="hxM-9b-MdE" customClass="AddBubbleViewController" customModule="Gasol_EZ" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="K2s-TE-qq5"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Zb-Ef-Tp4"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="nIJ-3g-1ZZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap the picture above to start!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jn7-ji-BoT">
-                                <rect key="frame" x="0.0" y="616" width="375" height="51"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="51" id="Okl-ov-fMO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="0.0"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVo-fD-ZbO">
-                                <rect key="frame" x="60" y="206" width="256" height="256"/>
-                                <color key="backgroundColor" red="0.45431686078134337" green="0.83826053211795271" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="rVo-fD-ZbO" secondAttribute="height" multiplier="1:1" id="bMr-pG-44g"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="118"/>
-                                <state key="normal" image="gas"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add keyword (ex. gas_station)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nS5-VV-ekW">
+                                <rect key="frame" x="56" y="113" width="263" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add image URL here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pni-qU-vAP">
+                                <rect key="frame" x="56" y="247" width="263" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="save" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="On3-gG-e0L">
+                                <rect key="frame" x="56" y="569" width="121" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="gasButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I5v-W1-Xs6"/>
+                                    <segue destination="f2V-bS-Y1g" kind="unwind" identifier="save" unwindAction="unwindToMainViewController:" id="E3n-An-TT2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to get Gas!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mff-On-F7p">
-                                <rect key="frame" x="0.0" y="28" width="375" height="51"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="51" id="ifh-J2-0zM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="cancelButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wH-ZJ-4zi">
+                                <rect key="frame" x="198" y="569" width="121" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="f2V-bS-Y1g" kind="unwind" identifier="cancel" unwindAction="unwindToMainViewController:" id="R9e-S0-xCA"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="jn7-ji-BoT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1rp-af-cj4"/>
-                            <constraint firstItem="jn7-ji-BoT" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Djv-xi-zbM"/>
-                            <constraint firstAttribute="trailing" secondItem="jn7-ji-BoT" secondAttribute="trailing" id="Dm7-Dk-gPy"/>
-                            <constraint firstItem="Mff-On-F7p" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="IpT-WL-4XE"/>
-                            <constraint firstItem="rVo-fD-ZbO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PSS-99-yvw"/>
-                            <constraint firstItem="Mff-On-F7p" firstAttribute="centerX" secondItem="rVo-fD-ZbO" secondAttribute="centerX" id="S4w-ks-yDd"/>
-                            <constraint firstItem="Mff-On-F7p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VTh-sV-HKU"/>
-                            <constraint firstAttribute="trailing" secondItem="Mff-On-F7p" secondAttribute="trailing" id="WQN-2Z-7GT"/>
-                            <constraint firstItem="rVo-fD-ZbO" firstAttribute="centerX" secondItem="jn7-ji-BoT" secondAttribute="centerX" id="YR0-jA-wi7"/>
-                        </constraints>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Gasol-EZ" id="scB-Wg-9Id"/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="gasButton" destination="rVo-fD-ZbO" id="4np-ux-Q0B"/>
-                        <outlet property="tutorialLabel" destination="jn7-ji-BoT" id="Pxj-wN-9hN"/>
+                        <outlet property="cancelButton" destination="6wH-ZJ-4zi" id="YLW-zk-iPf"/>
+                        <outlet property="imageURL" destination="pni-qU-vAP" id="aAX-PL-MZW"/>
+                        <outlet property="keyWord" destination="nS5-VV-ekW" id="H6W-vZ-WMc"/>
+                        <outlet property="saveButton" destination="On3-gG-e0L" id="LW1-t3-Nbu"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nly-MI-JmO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="f2V-bS-Y1g" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1437.5999999999999" y="760.56971514242889"/>
+            <point key="canvasLocation" x="2774" y="1425"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WY5-Hy-eb6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SLT-lf-nxi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="j8v-dv-uAS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cdI-co-Yrd" kind="relationship" relationship="rootViewController" id="Fqp-sa-y09"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YDr-uo-wdO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1285.5999999999999" y="1425.3373313343329"/>
         </scene>
     </scenes>
     <resources>
-        <image name="gas" width="256" height="256"/>
+        <image name="mcdonalds" width="1000" height="758"/>
     </resources>
 </document>
