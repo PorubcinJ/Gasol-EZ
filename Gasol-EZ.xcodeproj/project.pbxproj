@@ -87,7 +87,6 @@
 				FEDA225A1F1E6FC700B00586 /* Views */,
 				FEED2FEB1F17FA4D00FB417A /* Helpers */,
 				FE1CF9731F0D2E87004EB3EA /* AppDelegate.swift */,
-				FEED2FF01F19582200FB417A /* CoreData.xcdatamodeld */,
 				FE1CF98C1F0D493C004EB3EA /* Supporting Files */,
 				FE1CF98B1F0D4929004EB3EA /* View Controllers */,
 				FE1CF98A1F0D4917004EB3EA /* Storyboards */,
@@ -144,6 +143,7 @@
 		FEED2FEB1F17FA4D00FB417A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				FEED2FF01F19582200FB417A /* CoreData.xcdatamodeld */,
 				FEED2FEE1F191DF200FB417A /* CoreDataHelper.swift */,
 			);
 			name = Helpers;

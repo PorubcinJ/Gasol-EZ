@@ -21,7 +21,7 @@ class AddBubbleViewController: UIViewController {
 	
 	
 	override func viewDidLoad() {
-		//
+		super.viewDidLoad()
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -40,7 +40,7 @@ class AddBubbleViewController: UIViewController {
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if restorationIdentifier == "save" {
+		if segue.identifier == "save" {
 			let button = self.button ?? CoreDataHelper.newButton()
 			button.keyword = keyWord.text ?? ""
 			button.url = imageURL.text ?? ""

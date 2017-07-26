@@ -10,6 +10,5 @@ import Foundation
 import UIKit
 
 class ButtonCollectionViewCell: UICollectionViewCell {
-	@IBOutlet weak var image: UIButton!
-	
+	@IBOutlet weak var buttonImage: UIButton!
 }

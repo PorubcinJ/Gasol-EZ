@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,45 +15,48 @@
         <scene sceneID="DsX-mZ-oad">
             <objects>
                 <collectionViewController restorationIdentifier="MainViewController" id="cdI-co-Yrd" customClass="MainViewController" customModule="Gasol_EZ" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Oz7-6f-xQH" customClass="List">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Oz7-6f-xQH" customClass="List">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fBy-oC-6Eu">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="114" height="114"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="bubbleCell" id="pF8-jY-wqY" customClass="ButtonCollectionViewCell" customModule="Gasol_EZ" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="buttonCell" id="pF8-jY-wqY" customClass="ButtonCollectionViewCell" customModule="Gasol_EZ" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="114" height="114"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="114" height="114"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Tp-ZI-uEH">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <state key="normal" image="mcdonalds"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nc6-S8-vS4">
+                                            <rect key="frame" x="0.0" y="0.0" width="114" height="114"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Nc6-S8-vS4" secondAttribute="height" multiplier="1:1" id="J46-bV-UO7"/>
+                                            </constraints>
+                                            <state key="normal" image="gas"/>
+                                            <connections>
+                                                <action selector="firstButtonPressed:" destination="cdI-co-Yrd" eventType="touchUpInside" id="me7-Yi-U9Q"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </view>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="8Tp-ZI-uEH" firstAttribute="leading" secondItem="pF8-jY-wqY" secondAttribute="leading" id="9AH-vX-JfL"/>
-                                    <constraint firstItem="8Tp-ZI-uEH" firstAttribute="top" secondItem="pF8-jY-wqY" secondAttribute="top" id="I6G-S5-5cs"/>
-                                    <constraint firstAttribute="bottom" secondItem="8Tp-ZI-uEH" secondAttribute="bottom" id="XHJ-IB-brq"/>
-                                    <constraint firstAttribute="trailing" secondItem="8Tp-ZI-uEH" secondAttribute="trailing" id="sNn-UL-Ilm"/>
+                                    <constraint firstItem="Nc6-S8-vS4" firstAttribute="top" secondItem="pF8-jY-wqY" secondAttribute="top" id="3s8-4o-quz"/>
+                                    <constraint firstItem="Nc6-S8-vS4" firstAttribute="leading" secondItem="pF8-jY-wqY" secondAttribute="leading" id="4co-Ju-x6U"/>
+                                    <constraint firstAttribute="trailing" secondItem="Nc6-S8-vS4" secondAttribute="trailing" id="eou-zW-KaU"/>
+                                    <constraint firstAttribute="bottom" secondItem="Nc6-S8-vS4" secondAttribute="bottom" id="pe5-pq-C24"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="image" destination="8Tp-ZI-uEH" id="DQy-rF-veb"/>
+                                    <outlet property="buttonImage" destination="Nc6-S8-vS4" id="2MB-jL-rtN"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="cdI-co-Yrd" id="7Cl-gh-tmE"/>
-                            <outlet property="delegate" destination="cdI-co-Yrd" id="p88-E9-cu0"/>
-                        </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="One Tap!" id="Tqi-Ju-YWo">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="pgI-YN-UWS" userLabel="addButton">
@@ -78,24 +83,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add keyword (ex. gas_station)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nS5-VV-ekW">
-                                <rect key="frame" x="56" y="113" width="263" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="theKey" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add keyword (ex. gas_station)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nS5-VV-ekW">
+                                <rect key="frame" x="81" y="113" width="214" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add image URL here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pni-qU-vAP">
-                                <rect key="frame" x="56" y="247" width="263" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add image URL here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pni-qU-vAP">
+                                <rect key="frame" x="81" y="247" width="215" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="save" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="On3-gG-e0L">
-                                <rect key="frame" x="56" y="569" width="121" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="save" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="On3-gG-e0L">
+                                <rect key="frame" x="56" y="327" width="121" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="kvF-Tl-rTl"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -104,9 +109,8 @@
                                     <segue destination="f2V-bS-Y1g" kind="unwind" identifier="save" unwindAction="unwindToMainViewController:" id="E3n-An-TT2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="cancelButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wH-ZJ-4zi">
-                                <rect key="frame" x="198" y="569" width="121" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="cancelButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wH-ZJ-4zi">
+                                <rect key="frame" x="198" y="327" width="121" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Cancel">
@@ -118,6 +122,18 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="On3-gG-e0L" firstAttribute="top" secondItem="pni-qU-vAP" secondAttribute="bottom" constant="50" id="3ll-ky-W8v"/>
+                            <constraint firstItem="On3-gG-e0L" firstAttribute="baseline" secondItem="6wH-ZJ-4zi" secondAttribute="baseline" id="67p-gS-rQR"/>
+                            <constraint firstItem="nS5-VV-ekW" firstAttribute="top" secondItem="K2s-TE-qq5" secondAttribute="bottom" constant="49" id="6Dd-Eq-f96"/>
+                            <constraint firstItem="6wH-ZJ-4zi" firstAttribute="leading" secondItem="On3-gG-e0L" secondAttribute="trailing" constant="21" id="Apa-wL-HjL"/>
+                            <constraint firstItem="On3-gG-e0L" firstAttribute="leading" secondItem="nIJ-3g-1ZZ" secondAttribute="leadingMargin" constant="40" id="D3k-Rn-8fB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6wH-ZJ-4zi" secondAttribute="trailing" constant="40" id="Kco-Q0-eay"/>
+                            <constraint firstItem="nS5-VV-ekW" firstAttribute="centerX" secondItem="nIJ-3g-1ZZ" secondAttribute="centerX" id="ba5-RP-vfn"/>
+                            <constraint firstItem="nS5-VV-ekW" firstAttribute="centerX" secondItem="pni-qU-vAP" secondAttribute="centerX" id="crz-fk-UZZ"/>
+                            <constraint firstItem="5Zb-Ef-Tp4" firstAttribute="top" secondItem="On3-gG-e0L" secondAttribute="bottom" constant="310" id="qv5-v7-mSm"/>
+                            <constraint firstItem="nS5-VV-ekW" firstAttribute="leading" secondItem="pni-qU-vAP" secondAttribute="leading" id="rgq-x2-hZt"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="6wH-ZJ-4zi" id="YLW-zk-iPf"/>
@@ -129,14 +145,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nly-MI-JmO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="f2V-bS-Y1g" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2774" y="1425"/>
+            <point key="canvasLocation" x="2773.5999999999999" y="1424.4377811094455"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WY5-Hy-eb6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SLT-lf-nxi" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="j8v-dv-uAS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j8v-dv-uAS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -151,6 +167,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="mcdonalds" width="1000" height="758"/>
+        <image name="gas" width="256" height="256"/>
     </resources>
 </document>
