@@ -9,6 +9,17 @@
 import Foundation
 import UIKit
 
+protocol ButtonCollectionViewCellDelegate: class {
+	func didTapButton(_ button: UIButton, on cell: ButtonCollectionViewCell)
+}
+
 class ButtonCollectionViewCell: UICollectionViewCell {
 	@IBOutlet weak var buttonImage: UIButton!
+	
+	weak var delegate: ButtonCollectionViewCellDelegate?
+	
+	
+	@IBAction func buttonTapped(_ sender: UIButton) {
+		delegate?.didTapButton(sender, on: self)
+	}
 }

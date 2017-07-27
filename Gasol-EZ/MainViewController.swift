@@ -13,9 +13,7 @@ import SwiftyJSON
 import MapKit
 import JLocationKit
 
-final class MainViewController: UICollectionViewController{
-	
-	var button: Button?
+final class MainViewController: UICollectionViewController {
 	
 	var buttons = [Button](){
 		didSet {
@@ -38,7 +36,7 @@ final class MainViewController: UICollectionViewController{
     }
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if restorationIdentifier == "addButton" {
+		if segue.identifier == "addButton" {
 			print("+ button tapped")
 		}
 	}
@@ -67,9 +65,13 @@ final class MainViewController: UICollectionViewController{
 
 
     func openMapForPlace() {
-        let latitude: CLLocationDegrees = CLLocationDegrees(gasStations[0].locationLatitude)
-        let longitude: CLLocationDegrees = CLLocationDegrees(gasStations[0].locationLongitude)
-
+		
+		if gasStations.count < 1 {
+			print("No places found in radius")
+			return
+		}
+		let latitude: CLLocationDegrees = CLLocationDegrees(gasStations[0].locationLatitude)
+		let longitude: CLLocationDegrees = CLLocationDegrees(gasStations[0].locationLongitude)
         let regionDistance:CLLocationDistance = 70000
 
         let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
@@ -83,33 +85,40 @@ final class MainViewController: UICollectionViewController{
         mapItem.name = "\((gasStations[0].name)!)"
         mapItem.openInMaps(launchOptions: options)
     }
-	
-    @IBAction func firstButtonPressed(_ sender: UIButton) {
-        print("Button pressed")
-        let locationCoordinates: String = "\(locationLatitude!),\(locationLongidude!)"
-        let apiToContact = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(locationCoordinates)&rankby=distance&keyword=\(button?.keyword ?? button?.keyword)&opennow=true&key=\(Constants.Alamofire.gmPlacesApiKey)"
+	/*
+	@IBAction func firstButtonPressed(_ sender: UIButton) {
+		print("my location: \(locationLatitude)")
+		print(locationLongidude)
+		
+		guard let keyWord = buttons[buttons.count - 1].keyword else {
+			return
+		}
+		
+		let locationCoordinates: String = "\(locationLatitude!),\(locationLongidude!)"
+		let apiToContact = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(locationCoordinates)&rankby=distance&keyword=\(keyWord)&opennow=true&key=\(Constants.Alamofire.gmPlacesApiKey)"
+		print(apiToContact)
+		Alamofire.request(apiToContact).validate().responseJSON() { response in
+			switch response.result {
+			case .success:
+				if let value = response.result.value {
+					let json = JSON(value)
+					let gasStationData = json["results"]
+					print("About to print gas station data")
+					print(gasStationData)
 
-        Alamofire.request(apiToContact).validate().responseJSON() { response in
-            switch response.result {
-            case .success:
-                if let value = response.result.value {
-                    let json = JSON(value)
-                    let gasStationData = json["results"]
+					for i in 0..<gasStationData.count {
+						self.gasStations.append(GasStation(json: gasStationData[i]))
+					}
+					print(self.gasStations)
+					self.openMapForPlace()
 
-                    print(gasStationData)
-
-                    for i in 0..<gasStationData.count {
-                        self.gasStations.append(GasStation(json: gasStationData[i]))
-                    }
-                    print(self.gasStations)
-                    self.openMapForPlace()
-
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
+				}
+			case .failure(let error):
+				print(error)
+			}
+		}
 	}
+*/
 	
 	override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		print(buttons.count)
@@ -120,10 +129,9 @@ override func collectionView(_ collectionView: UICollectionView, cellForItemAt i
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "buttonCell", for: indexPath) as! ButtonCollectionViewCell
 		//let item = indexPath.item
 		let button = buttons[indexPath.row]
+	cell.delegate = self
 	
 //		cell.buttonImage.text = button.keyword
-	
-		let keyWord = button.keyword
 //		cell.buttonImage.text = button.url
 		return cell
 	}	
@@ -133,6 +141,43 @@ override func collectionView(_ collectionView: UICollectionView, cellForItemAt i
 	}
 }
 
+extension MainViewController : ButtonCollectionViewCellDelegate {
+	func didTapButton(_ button: UIButton, on cell: ButtonCollectionViewCell) {
+		guard let indexPath = collectionView?.indexPath(for: cell)
+			else { return }
+		
+		guard let keyword = buttons[indexPath.row].keyword else {
+			return
+		}
+		
+		let locationCoordinates: String = "\(locationLatitude!),\(locationLongidude!)"
+		let apiToContact = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(locationCoordinates)&rankby=distance&keyword=\(keyword)&opennow=true&key=\(Constants.Alamofire.gmPlacesApiKey)"
+		print(apiToContact)
+		Alamofire.request(apiToContact).validate().responseJSON() { response in
+			switch response.result {
+			case .success:
+				if let value = response.result.value {
+					let json = JSON(value)
+					let gasStationData = json["results"]
+					print("About to print gas station data")
+					//print(gasStationData)
+					
+					self.gasStations.removeAll()
+					for i in 0..<gasStationData.count {
+						self.gasStations.append(GasStation(json: gasStationData[i]))
+					}
+					//print(self.gasStations)
+					self.openMapForPlace()
+					
+				}
+			case .failure(let error):
+				print(error)
+			}
+		}
+
+		
+	}
+}
 
 
 

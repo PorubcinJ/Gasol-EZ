@@ -15,7 +15,7 @@
         <scene sceneID="DsX-mZ-oad">
             <objects>
                 <collectionViewController restorationIdentifier="MainViewController" id="cdI-co-Yrd" customClass="MainViewController" customModule="Gasol_EZ" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Oz7-6f-xQH" customClass="List">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Oz7-6f-xQH" customClass="List">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -40,7 +40,7 @@
                                             </constraints>
                                             <state key="normal" image="gas"/>
                                             <connections>
-                                                <action selector="firstButtonPressed:" destination="cdI-co-Yrd" eventType="touchUpInside" id="me7-Yi-U9Q"/>
+                                                <action selector="buttonTapped:" destination="pF8-jY-wqY" eventType="touchUpInside" id="wcC-nE-xrx"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -61,7 +61,7 @@
                     <navigationItem key="navigationItem" title="One Tap!" id="Tqi-Ju-YWo">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="pgI-YN-UWS" userLabel="addButton">
                             <connections>
-                                <segue destination="hxM-9b-MdE" kind="show" id="3bm-cp-Rc2"/>
+                                <segue destination="hxM-9b-MdE" kind="show" identifier="addButton" id="3bm-cp-Rc2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -152,7 +152,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SLT-lf-nxi" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j8v-dv-uAS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="j8v-dv-uAS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
