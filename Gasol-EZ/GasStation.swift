@@ -2,7 +2,7 @@
 //  GasStation.swift
 //  Gasol-EZ
 //
-//  Created by Jozef Porubcin and Matt Ziminski on 7/6/17.
+//  Created by Jozef Porubcin on 7/6/17.
 //  Copyright © 2017 Make School. All rights reserved.
 //
 

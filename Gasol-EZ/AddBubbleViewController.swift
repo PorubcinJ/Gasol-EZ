@@ -14,11 +14,8 @@ class AddBubbleViewController: UIViewController {
 	var button: Button?
 	
 	@IBOutlet weak var keyWord: UITextField!
-	@IBOutlet weak var imageURL: UITextField!
 	@IBOutlet weak var cancelButton: UIButton!
 	@IBOutlet weak var saveButton: UIButton!
-	
-	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -28,10 +25,8 @@ class AddBubbleViewController: UIViewController {
 		super.viewWillAppear(animated)
 		if let button = button {
 			keyWord.text = button.keyword
-			imageURL.text = button.url
 		} else {
 			keyWord.text = ""
-			imageURL.text = ""
 		}
 	}
 	
@@ -43,7 +38,6 @@ class AddBubbleViewController: UIViewController {
 		if segue.identifier == "save" {
 			let button = self.button ?? CoreDataHelper.newButton()
 			button.keyword = keyWord.text ?? ""
-			button.url = imageURL.text ?? ""
 			CoreDataHelper.saveButton()
 		}
 	}
