@@ -67,7 +67,7 @@ final class MainViewController: UICollectionViewController {
 	func openMapForPlace() {
 		
 		if gasStations.count < 1 {
-			print("No places found in radius")
+			print("No places found in radius, increase search radius?")
 			return
 		}
 		let latitude: CLLocationDegrees = CLLocationDegrees(gasStations[0].locationLatitude)
@@ -96,7 +96,7 @@ final class MainViewController: UICollectionViewController {
 		let button = buttons[indexPath.row]
 		cell.delegate = self
 		let keyword = buttons[indexPath.row].keyword
-		cell.buttonImage.setTitle("\(keyword!)", for: .normal)
+		cell.keywordLabel.text = button.keyword
 		
 		return cell
 	}

@@ -21,6 +21,8 @@ class ButtonCollectionViewCell: UICollectionViewCell {
 	
 	@IBOutlet weak var deleteButton: UIButton!
 	
+	@IBOutlet weak var keywordLabel: UILabel!
+	
 	weak var delegate: ButtonCollectionViewCellDelegate?
 	
 	
