@@ -37,15 +37,14 @@ final class MainViewController: UICollectionViewController {
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "addButton" {
-			print("+ button tapped")
+			//
 		}
 	}
 	
 	var didFindLocation: Bool = false
 	var radius: Double! = 1
 	
-	override func viewDidLoad()
-	{
+	override func viewDidLoad() {
 		location.requestAccess = .requestWhenInUseAuthorization //default is .requestAlwaysAuthorization
 		
 		location.getLocation(detectStyle: .Once, completion: { (loc) in
@@ -58,7 +57,6 @@ final class MainViewController: UICollectionViewController {
 			//optional
 			print(status)
 		})
-		print("Finished")
 		super.viewDidLoad()
 		buttons = CoreDataHelper.retrieveButtons()
 	}
@@ -67,7 +65,6 @@ final class MainViewController: UICollectionViewController {
 	func openMapForPlace() {
 		
 		if gasStations.count < 1 {
-			print("No places found in radius, increase search radius?")
 			return
 		}
 		let latitude: CLLocationDegrees = CLLocationDegrees(gasStations[0].locationLatitude)
@@ -115,8 +112,12 @@ extension MainViewController : ButtonCollectionViewCellDelegate {
 			return
 		}
 		
+		guard let finalKeyword = keyword.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
+			return
+		}
+		
 		let locationCoordinates: String = "\(locationLatitude!),\(locationLongidude!)"
-		let apiToContact = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(locationCoordinates)&rankby=distance&keyword=\(keyword)&opennow=true&key=\(Constants.Alamofire.gmPlacesApiKey)"
+		let apiToContact = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(locationCoordinates)&rankby=distance&keyword=\(finalKeyword)&opennow=true&key=\(Constants.Alamofire.gmPlacesApiKey)"
 		print(apiToContact)
 		Alamofire.request(apiToContact).validate().responseJSON() { response in
 			switch response.result {
@@ -124,28 +125,21 @@ extension MainViewController : ButtonCollectionViewCellDelegate {
 				if let value = response.result.value {
 					let json = JSON(value)
 					let gasStationData = json["results"]
-					print("About to print gas station data")
-					//print(gasStationData)
-					
 					self.gasStations.removeAll()
 					for i in 0..<gasStationData.count {
 						self.gasStations.append(GasStation(json: gasStationData[i]))
 					}
-					//print(self.gasStations)
 					self.openMapForPlace()
-					
 				}
 			case .failure(let error):
 				print(error)
 			}
+			//activityIndicatorItem.stopAnimating()
 		}
-		
-		
 	}
 	
 	func delete(cell: ButtonCollectionViewCell) {
 		if let indexPath = self.collectionView?.indexPath(for: cell) {
-			//buttons.remove(at: indexPath.item)
 			CoreDataHelper.delete(button: buttons[indexPath.row])
 			buttons = CoreDataHelper.retrieveButtons()
 		}

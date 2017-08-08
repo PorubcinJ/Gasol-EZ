@@ -9,7 +9,6 @@
 import Foundation
 
 struct Constants {
-
     struct Alamofire {
         static let gmPlacesApiKey = "AIzaSyDpbRiQZn6OTvtHkwRQBlCuD4nOWXWgN5k"
     }

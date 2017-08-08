@@ -19,6 +19,8 @@ class AddBubbleViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		saveButton.layer.cornerRadius = 6
+		cancelButton.layer.cornerRadius = 6
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {

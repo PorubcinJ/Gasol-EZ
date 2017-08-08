@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SLT-lf-nxi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SLT-lf-nxi">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,7 +18,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="Oz7-6f-xQH" customClass="List">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.83921568627450982" green="0.97647058823529409" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.25882352939999997" green="0.45882352939999999" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fBy-oC-6Eu">
                             <size key="itemSize" width="90" height="90"/>
@@ -26,6 +26,11 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
+                        <view key="backgroundView" contentMode="scaleToFill" id="AbY-D7-sD8" customClass="GradientView" customModule="Gasol_EZ" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="-64" width="375" height="667"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="buttonCell" id="pF8-jY-wqY" customClass="ButtonCollectionViewCell" customModule="Gasol_EZ" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
@@ -34,6 +39,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6ey-kL-6FI">
+                                            <rect key="frame" x="35" y="60" width="20" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </activityIndicatorView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6f-U5-0mc">
                                             <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                             <color key="backgroundColor" red="0.83921568627450982" green="0.97647058823529409" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -41,9 +50,23 @@
                                                 <constraint firstAttribute="width" secondItem="z6f-U5-0mc" secondAttribute="height" multiplier="1:1" id="np8-WA-Vnc"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nc6-S8-vS4">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Nc6-S8-vS4" secondAttribute="height" multiplier="1:1" id="J46-bV-UO7"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <state key="normal">
+                                                <color key="titleColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="buttonTapped:" destination="pF8-jY-wqY" eventType="touchUpInside" id="wcC-nE-xrx"/>
+                                            </connections>
+                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cl-pm-KE7">
                                             <rect key="frame" x="64" y="0.0" width="25" height="25"/>
                                             <color key="backgroundColor" red="0.0" green="0.31620826567917693" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,23 +80,9 @@
                                                 <action selector="deleteButtonTapped:" destination="pF8-jY-wqY" eventType="touchUpInside" id="wCu-Ve-Cmz"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nc6-S8-vS4">
-                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="Nc6-S8-vS4" secondAttribute="height" multiplier="1:1" id="J46-bV-UO7"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                            <state key="normal">
-                                                <color key="titleColor" red="0.25882352941176467" green="0.45882352941176469" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="buttonTapped:" destination="pF8-jY-wqY" eventType="touchUpInside" id="wcC-nE-xrx"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                 </view>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="4cl-pm-KE7" secondAttribute="trailing" constant="1" id="0E1-yH-kgQ"/>
                                     <constraint firstItem="4cl-pm-KE7" firstAttribute="top" secondItem="pF8-jY-wqY" secondAttribute="top" id="0JY-wF-7Eq"/>
@@ -87,6 +96,7 @@
                                     <constraint firstAttribute="bottom" secondItem="Nc6-S8-vS4" secondAttribute="bottom" id="pe5-pq-C24"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="activityIndicatorItem" destination="6ey-kL-6FI" id="iLf-UV-c6k"/>
                                     <outlet property="buttonImage" destination="Nc6-S8-vS4" id="2MB-jL-rtN"/>
                                     <outlet property="deleteButton" destination="4cl-pm-KE7" id="6A4-b9-2Qi"/>
                                     <outlet property="keywordLabel" destination="z6f-U5-0mc" id="8jr-sZ-7JP"/>
@@ -96,17 +106,18 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="One Tap!" id="Tqi-Ju-YWo">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="pgI-YN-UWS" userLabel="addButton">
-                            <color key="tintColor" red="0.25882352939999997" green="0.45882352939999999" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="hxM-9b-MdE" kind="show" identifier="addButton" id="3bm-cp-Rc2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <value key="contentSizeForViewInPopover" type="size" width="375" height="667"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1vm-gI-FY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1907" y="1424"/>
+            <point key="canvasLocation" x="2021.5999999999999" y="1423.5382308845578"/>
         </scene>
         <!--Add Bubble View Controller-->
         <scene sceneID="vrF-Ss-b8F">
@@ -116,44 +127,54 @@
                         <viewControllerLayoutGuide type="top" id="K2s-TE-qq5"/>
                         <viewControllerLayoutGuide type="bottom" id="5Zb-Ef-Tp4"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nIJ-3g-1ZZ">
+                    <view key="view" contentMode="scaleToFill" id="nIJ-3g-1ZZ" customClass="GradientView" customModule="Gasol_EZ" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="theKey" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add keyword (ex. gas_station)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nS5-VV-ekW">
-                                <rect key="frame" x="81" y="113" width="214" height="30"/>
-                                <color key="backgroundColor" red="0.93333333333333335" green="0.97254901960784312" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="textColor" red="0.25882352939999997" green="0.45882352939999999" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="theKey" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Destination (ex. gas station)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nS5-VV-ekW">
+                                <rect key="frame" x="87.5" y="113" width="201" height="30"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="save" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="On3-gG-e0L">
                                 <rect key="frame" x="56" y="327" width="121" height="30"/>
-                                <color key="backgroundColor" red="0.25882352939999997" green="0.45882352939999999" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="121" id="kvF-Tl-rTl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Save">
-                                    <color key="titleColor" red="0.93333333330000001" green="0.97254901959999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="f2V-bS-Y1g" kind="unwind" identifier="save" unwindAction="unwindToMainViewController:" id="E3n-An-TT2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="cancelButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wH-ZJ-4zi">
                                 <rect key="frame" x="198" y="327" width="121" height="30"/>
-                                <color key="backgroundColor" red="0.25882352939999997" green="0.45882352939999999" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Cancel">
-                                    <color key="titleColor" red="0.93333333330000001" green="0.97254901959999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="f2V-bS-Y1g" kind="unwind" identifier="cancel" unwindAction="unwindToMainViewController:" id="R9e-S0-xCA"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.8395862055583333" green="0.97647058819999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="On3-gG-e0L" firstAttribute="baseline" secondItem="6wH-ZJ-4zi" secondAttribute="baseline" id="67p-gS-rQR"/>
                             <constraint firstItem="nS5-VV-ekW" firstAttribute="top" secondItem="K2s-TE-qq5" secondAttribute="bottom" constant="49" id="6Dd-Eq-f96"/>
@@ -175,7 +196,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nly-MI-JmO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="f2V-bS-Y1g" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2773.5999999999999" y="1424.4377811094455"/>
+            <point key="canvasLocation" x="2745" y="1424"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WY5-Hy-eb6">

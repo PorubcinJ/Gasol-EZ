@@ -20,6 +20,7 @@
 		FEED2FEA1F17F8B100FB417A /* AddBubbleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEED2FE91F17F8B100FB417A /* AddBubbleViewController.swift */; };
 		FEED2FEF1F191DF200FB417A /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEED2FEE1F191DF200FB417A /* CoreDataHelper.swift */; };
 		FEED2FF21F19582200FB417A /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEED2FF01F19582200FB417A /* CoreData.xcdatamodeld */; };
+		FEFE339E1F38EE9900A4CCED /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFE339D1F38EE9900A4CCED /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		FEED2FE91F17F8B100FB417A /* AddBubbleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBubbleViewController.swift; sourceTree = "<group>"; };
 		FEED2FEE1F191DF200FB417A /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		FEED2FF11F19582200FB417A /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		FEFE339D1F38EE9900A4CCED /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			children = (
 				FE1CF98D1F0D4DCD004EB3EA /* MainViewController.swift */,
 				FEED2FE91F17F8B100FB417A /* AddBubbleViewController.swift */,
+				FEFE339D1F38EE9900A4CCED /* GradientView.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				68DE217E1F0EBAC700ACC53E /* GasStation.swift in Sources */,
 				68DE217C1F0E8C6700ACC53E /* Constants.swift in Sources */,
 				FE1CF98E1F0D4DCD004EB3EA /* MainViewController.swift in Sources */,
+				FEFE339E1F38EE9900A4CCED /* GradientView.swift in Sources */,
 				FEED2FEA1F17F8B100FB417A /* AddBubbleViewController.swift in Sources */,
 				FE1CF9741F0D2E87004EB3EA /* AppDelegate.swift in Sources */,
 				FEDA225C1F1E6FE000B00586 /* ButtonCollectionViewCell.swift in Sources */,
@@ -415,9 +419,10 @@
 				DEVELOPMENT_TEAM = ZHF2BK8EVZ;
 				INFOPLIST_FILE = "Gasol-EZ/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jozefporubcin.Gasol-EZ";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jozefporubcin.One-Tap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -429,9 +434,10 @@
 				DEVELOPMENT_TEAM = ZHF2BK8EVZ;
 				INFOPLIST_FILE = "Gasol-EZ/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jozefporubcin.Gasol-EZ";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jozefporubcin.One-Tap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
