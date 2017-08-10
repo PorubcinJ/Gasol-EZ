@@ -187,7 +187,7 @@
 				TargetAttributes = {
 					FE1CF96F1F0D2E87004EB3EA = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = ZHF2BK8EVZ;
+						DevelopmentTeam = B4R7E36C3Z;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -416,10 +416,10 @@
 			baseConfigurationReference = 4702086DCEFC0556179DE784 /* Pods-Gasol-EZ.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZHF2BK8EVZ;
+				DEVELOPMENT_TEAM = B4R7E36C3Z;
 				INFOPLIST_FILE = "Gasol-EZ/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jozefporubcin.One-Tap";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.One-Tap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -431,10 +431,10 @@
 			baseConfigurationReference = 89E7A00E806EB0FD37B5C554 /* Pods-Gasol-EZ.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ZHF2BK8EVZ;
+				DEVELOPMENT_TEAM = B4R7E36C3Z;
 				INFOPLIST_FILE = "Gasol-EZ/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jozefporubcin.One-Tap";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.One-Tap";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

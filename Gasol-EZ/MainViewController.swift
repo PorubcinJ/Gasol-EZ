@@ -63,10 +63,10 @@ final class MainViewController: UICollectionViewController {
 	
 	
 	func openMapForPlace() {
-		
 		if gasStations.count < 1 {
 			return
 		}
+		
 		let latitude: CLLocationDegrees = CLLocationDegrees(gasStations[0].locationLatitude)
 		let longitude: CLLocationDegrees = CLLocationDegrees(gasStations[0].locationLongitude)
 		let regionDistance:CLLocationDistance = 70000

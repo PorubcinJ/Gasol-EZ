@@ -39,10 +39,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6ey-kL-6FI">
-                                            <rect key="frame" x="35" y="60" width="20" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </activityIndicatorView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sample Text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6f-U5-0mc">
                                             <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                             <color key="backgroundColor" red="0.83921568627450982" green="0.97647058823529409" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -96,7 +92,6 @@
                                     <constraint firstAttribute="bottom" secondItem="Nc6-S8-vS4" secondAttribute="bottom" id="pe5-pq-C24"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="activityIndicatorItem" destination="6ey-kL-6FI" id="iLf-UV-c6k"/>
                                     <outlet property="buttonImage" destination="Nc6-S8-vS4" id="2MB-jL-rtN"/>
                                     <outlet property="deleteButton" destination="4cl-pm-KE7" id="6A4-b9-2Qi"/>
                                     <outlet property="keywordLabel" destination="z6f-U5-0mc" id="8jr-sZ-7JP"/>
@@ -196,14 +191,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nly-MI-JmO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="f2V-bS-Y1g" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2745" y="1424"/>
+            <point key="canvasLocation" x="2780" y="1424"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WY5-Hy-eb6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SLT-lf-nxi" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="j8v-dv-uAS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j8v-dv-uAS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

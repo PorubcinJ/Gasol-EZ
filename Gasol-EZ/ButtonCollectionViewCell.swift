@@ -25,15 +25,11 @@ class ButtonCollectionViewCell: UICollectionViewCell {
 	
 	weak var delegate: ButtonCollectionViewCellDelegate?
 	
-	@IBOutlet weak var activityIndicatorItem: UIActivityIndicatorView!
-	
 	@IBAction func deleteButtonTapped(_ sender: UIButton) {
 		delegate?.delete(cell: self)
 	}
 	@IBAction func buttonTapped(_ sender: UIButton) {
 		delegate?.didTapButton(sender, on: self)
-		activityIndicatorItem.hidesWhenStopped = true
-		activityIndicatorItem.startAnimating()
 	}
 	
 	
