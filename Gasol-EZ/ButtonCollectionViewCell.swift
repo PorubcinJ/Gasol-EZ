@@ -31,6 +31,4 @@ class ButtonCollectionViewCell: UICollectionViewCell {
 	@IBAction func buttonTapped(_ sender: UIButton) {
 		delegate?.didTapButton(sender, on: self)
 	}
-	
-	
 }

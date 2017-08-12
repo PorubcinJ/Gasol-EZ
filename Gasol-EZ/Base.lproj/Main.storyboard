@@ -109,6 +109,9 @@
                     </navigationItem>
                     <value key="contentSizeForViewInPopover" type="size" width="375" height="667"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="addButton" destination="pgI-YN-UWS" id="lRJ-IN-OP1"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1vm-gI-FY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -198,7 +201,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SLT-lf-nxi" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j8v-dv-uAS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="j8v-dv-uAS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -209,7 +212,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YDr-uo-wdO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1285.5999999999999" y="1425.3373313343329"/>
+            <point key="canvasLocation" x="1164" y="1424"/>
         </scene>
     </scenes>
     <resources>

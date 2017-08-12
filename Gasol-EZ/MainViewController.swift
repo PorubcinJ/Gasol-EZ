@@ -12,6 +12,7 @@ import Alamofire
 import SwiftyJSON
 import MapKit
 import JLocationKit
+import CoreLocation
 
 final class MainViewController: UICollectionViewController {
 	
@@ -21,10 +22,12 @@ final class MainViewController: UICollectionViewController {
 		}
 	}
 	
+	@IBOutlet weak var addButton: UIBarButtonItem!
+	
 	let location: LocationManager = LocationManager()
+	let locationManager = CLLocationManager()
 	var locationLatitude: String!
 	var locationLongidude: String!
-	
 	var gasStation: GasStation!
 	var gasStations: [GasStation] = []
 	
@@ -38,26 +41,69 @@ final class MainViewController: UICollectionViewController {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "addButton" {
 			//
+			
 		}
 	}
 	
 	var didFindLocation: Bool = false
 	var radius: Double! = 1
 	
+	func requestForLocation() {
+		addButton.isEnabled = true
+		if CLLocationManager.locationServicesEnabled() {
+			switch(CLLocationManager.authorizationStatus()) {
+			case .notDetermined:
+				self.location.requestAccess = .requestWhenInUseAuthorization
+				self.addButton.isEnabled = false
+				//requestForLocation()
+			case .restricted, .denied:
+				let alertController = UIAlertController(title: "Alert", message: "Oops, it seems that you have denied our request to use your location. Without your location, this app will not be able to navigate you accurately. We don't review or track any user's location information; we respect your privacy. TO ENABLE LOCATION SERVIES FOR THIS APP, you will need to go to Settings, Privacy, Location Services, One Tap, and allow location services. Thank you!", preferredStyle: UIAlertControllerStyle.alert)
+				let okAction = UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler:  {
+					UIAlertAction in
+					print("In here")
+					self.addButton.isEnabled = false
+				})
+				alertController.addAction(okAction)
+				self.present(alertController, animated: true, completion: {
+					self.addButton.isEnabled = false
+				})
+			case .authorizedAlways, .authorizedWhenInUse:
+				print("Access")
+			default:
+				break
+			}
+		} else {
+			addButton.isEnabled = false
+		}
+	}
+	
 	override func viewDidLoad() {
-		location.requestAccess = .requestWhenInUseAuthorization //default is .requestAlwaysAuthorization
+		super.viewDidLoad()
+		
+		
+		
+		requestForLocation()
+		
+		
+		
+		//if self.locationLatitude == nil {
+		//	location.requestAccess = .requestWhenInUseAuthorization
+		//} else {
+		
+		 //default is .requestAlwaysAuthorization
+		
 		
 		location.getLocation(detectStyle: .Once, completion: { (loc) in
+			
 			print(loc.currentLocation.coordinate.latitude.description)
 			print(loc.currentLocation.coordinate.longitude.description)
-			
+			self.addButton.isEnabled = true
 			self.locationLatitude = loc.currentLocation.coordinate.latitude.description
 			self.locationLongidude = loc.currentLocation.coordinate.longitude.description
 		}, authorizationChange: { (status) in
 			//optional
 			print(status)
 		})
-		super.viewDidLoad()
 		buttons = CoreDataHelper.retrieveButtons()
 	}
 	
@@ -101,6 +147,8 @@ final class MainViewController: UICollectionViewController {
 	@IBAction func unwindToMainViewController(_ segue: UIStoryboardSegue) {
 		self.buttons = CoreDataHelper.retrieveButtons()
 	}
+	
+	
 }
 
 extension MainViewController : ButtonCollectionViewCellDelegate {
@@ -116,7 +164,15 @@ extension MainViewController : ButtonCollectionViewCellDelegate {
 			return
 		}
 		
-		let locationCoordinates: String = "\(locationLatitude!),\(locationLongidude!)"
+		guard let locationLatitude = locationLatitude, let locationLongidude = locationLongidude else {
+			print("The coordinates are nil")
+			locationManager.requestLocation()
+			return
+		}
+		
+		
+		
+		let locationCoordinates: String = "\(locationLatitude),\(locationLongidude)"
 		let apiToContact = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(locationCoordinates)&rankby=distance&keyword=\(finalKeyword)&opennow=true&key=\(Constants.Alamofire.gmPlacesApiKey)"
 		print(apiToContact)
 		Alamofire.request(apiToContact).validate().responseJSON() { response in
